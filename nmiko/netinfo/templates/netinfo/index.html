@@ -1,0 +1,15 @@
+{% extends 'netinfo/base.html' %}
+
+{% block content %}
+<h1>Cisco Switch Comands:</h1>
+<br/>
+<form method="POST"> {% csrf_token %}
+{{ form }}
+    <input type="submit" value="Run command!" />
+</form>
+{% if request.POST %}
+<p>Command output:</p>
+<pre>{{ output }}</pre>
+{% endif %}
+
+{% endblock %}
